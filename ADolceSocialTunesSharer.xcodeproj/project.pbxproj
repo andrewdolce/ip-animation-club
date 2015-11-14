@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF1AB1D41BF79E1C00742DB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB1D31BF79E1C00742DB4 /* AppDelegate.swift */; };
+		AF1AB1D61BF79E1C00742DB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB1D51BF79E1C00742DB4 /* ViewController.swift */; };
+		AF1AB1D91BF79E1C00742DB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1AB1D71BF79E1C00742DB4 /* Main.storyboard */; };
+		AF1AB1DB1BF79E1C00742DB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1AB1DA1BF79E1C00742DB4 /* Assets.xcassets */; };
+		AF1AB1DE1BF79E1C00742DB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1AB1DC1BF79E1C00742DB4 /* LaunchScreen.storyboard */; };
+		AF1AB1E91BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB1E81BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift */; };
+		AF1AB1F41BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB1F31BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF1AB1E51BF79E1C00742DB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1AB1C81BF79E1C00742DB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1AB1CF1BF79E1C00742DB4;
+			remoteInfo = ADolceSocialTunesSharer;
+		};
+		AF1AB1F01BF79E1C00742DB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1AB1C81BF79E1C00742DB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1AB1CF1BF79E1C00742DB4;
+			remoteInfo = ADolceSocialTunesSharer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF1AB1D01BF79E1C00742DB4 /* ADolceSocialTunesSharer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADolceSocialTunesSharer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1AB1D31BF79E1C00742DB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF1AB1D51BF79E1C00742DB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF1AB1D81BF79E1C00742DB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF1AB1DA1BF79E1C00742DB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF1AB1DD1BF79E1C00742DB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF1AB1DF1BF79E1C00742DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF1AB1E41BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADolceSocialTunesSharerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1AB1E81BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADolceSocialTunesSharerTests.swift; sourceTree = "<group>"; };
+		AF1AB1EA1BF79E1C00742DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF1AB1EF1BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADolceSocialTunesSharerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1AB1F31BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADolceSocialTunesSharerUITests.swift; sourceTree = "<group>"; };
+		AF1AB1F51BF79E1C00742DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF1AB1CD1BF79E1C00742DB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1AB1E11BF79E1C00742DB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1AB1EC1BF79E1C00742DB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF1AB1C71BF79E1C00742DB4 = {
+			isa = PBXGroup;
+			children = (
+				AF1AB1D21BF79E1C00742DB4 /* ADolceSocialTunesSharer */,
+				AF1AB1E71BF79E1C00742DB4 /* ADolceSocialTunesSharerTests */,
+				AF1AB1F21BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests */,
+				AF1AB1D11BF79E1C00742DB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF1AB1D11BF79E1C00742DB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF1AB1D01BF79E1C00742DB4 /* ADolceSocialTunesSharer.app */,
+				AF1AB1E41BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.xctest */,
+				AF1AB1EF1BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF1AB1D21BF79E1C00742DB4 /* ADolceSocialTunesSharer */ = {
+			isa = PBXGroup;
+			children = (
+				AF1AB1D31BF79E1C00742DB4 /* AppDelegate.swift */,
+				AF1AB1D51BF79E1C00742DB4 /* ViewController.swift */,
+				AF1AB1D71BF79E1C00742DB4 /* Main.storyboard */,
+				AF1AB1DA1BF79E1C00742DB4 /* Assets.xcassets */,
+				AF1AB1DC1BF79E1C00742DB4 /* LaunchScreen.storyboard */,
+				AF1AB1DF1BF79E1C00742DB4 /* Info.plist */,
+			);
+			path = ADolceSocialTunesSharer;
+			sourceTree = "<group>";
+		};
+		AF1AB1E71BF79E1C00742DB4 /* ADolceSocialTunesSharerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF1AB1E81BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift */,
+				AF1AB1EA1BF79E1C00742DB4 /* Info.plist */,
+			);
+			path = ADolceSocialTunesSharerTests;
+			sourceTree = "<group>";
+		};
+		AF1AB1F21BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF1AB1F31BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift */,
+				AF1AB1F51BF79E1C00742DB4 /* Info.plist */,
+			);
+			path = ADolceSocialTunesSharerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF1AB1CF1BF79E1C00742DB4 /* ADolceSocialTunesSharer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1AB1F81BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharer" */;
+			buildPhases = (
+				AF1AB1CC1BF79E1C00742DB4 /* Sources */,
+				AF1AB1CD1BF79E1C00742DB4 /* Frameworks */,
+				AF1AB1CE1BF79E1C00742DB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ADolceSocialTunesSharer;
+			productName = ADolceSocialTunesSharer;
+			productReference = AF1AB1D01BF79E1C00742DB4 /* ADolceSocialTunesSharer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF1AB1E31BF79E1C00742DB4 /* ADolceSocialTunesSharerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1AB1FB1BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharerTests" */;
+			buildPhases = (
+				AF1AB1E01BF79E1C00742DB4 /* Sources */,
+				AF1AB1E11BF79E1C00742DB4 /* Frameworks */,
+				AF1AB1E21BF79E1C00742DB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF1AB1E61BF79E1C00742DB4 /* PBXTargetDependency */,
+			);
+			name = ADolceSocialTunesSharerTests;
+			productName = ADolceSocialTunesSharerTests;
+			productReference = AF1AB1E41BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF1AB1EE1BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1AB1FE1BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharerUITests" */;
+			buildPhases = (
+				AF1AB1EB1BF79E1C00742DB4 /* Sources */,
+				AF1AB1EC1BF79E1C00742DB4 /* Frameworks */,
+				AF1AB1ED1BF79E1C00742DB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF1AB1F11BF79E1C00742DB4 /* PBXTargetDependency */,
+			);
+			name = ADolceSocialTunesSharerUITests;
+			productName = ADolceSocialTunesSharerUITests;
+			productReference = AF1AB1EF1BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF1AB1C81BF79E1C00742DB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Intrepid Pursuits";
+				TargetAttributes = {
+					AF1AB1CF1BF79E1C00742DB4 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					AF1AB1E31BF79E1C00742DB4 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = AF1AB1CF1BF79E1C00742DB4;
+					};
+					AF1AB1EE1BF79E1C00742DB4 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = AF1AB1CF1BF79E1C00742DB4;
+					};
+				};
+			};
+			buildConfigurationList = AF1AB1CB1BF79E1C00742DB4 /* Build configuration list for PBXProject "ADolceSocialTunesSharer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF1AB1C71BF79E1C00742DB4;
+			productRefGroup = AF1AB1D11BF79E1C00742DB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF1AB1CF1BF79E1C00742DB4 /* ADolceSocialTunesSharer */,
+				AF1AB1E31BF79E1C00742DB4 /* ADolceSocialTunesSharerTests */,
+				AF1AB1EE1BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF1AB1CE1BF79E1C00742DB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1AB1DE1BF79E1C00742DB4 /* LaunchScreen.storyboard in Resources */,
+				AF1AB1DB1BF79E1C00742DB4 /* Assets.xcassets in Resources */,
+				AF1AB1D91BF79E1C00742DB4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1AB1E21BF79E1C00742DB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1AB1ED1BF79E1C00742DB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF1AB1CC1BF79E1C00742DB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1AB1D61BF79E1C00742DB4 /* ViewController.swift in Sources */,
+				AF1AB1D41BF79E1C00742DB4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1AB1E01BF79E1C00742DB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1AB1E91BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1AB1EB1BF79E1C00742DB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1AB1F41BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF1AB1E61BF79E1C00742DB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF1AB1CF1BF79E1C00742DB4 /* ADolceSocialTunesSharer */;
+			targetProxy = AF1AB1E51BF79E1C00742DB4 /* PBXContainerItemProxy */;
+		};
+		AF1AB1F11BF79E1C00742DB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF1AB1CF1BF79E1C00742DB4 /* ADolceSocialTunesSharer */;
+			targetProxy = AF1AB1F01BF79E1C00742DB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF1AB1D71BF79E1C00742DB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF1AB1D81BF79E1C00742DB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF1AB1DC1BF79E1C00742DB4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF1AB1DD1BF79E1C00742DB4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF1AB1F61BF79E1C00742DB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF1AB1F71BF79E1C00742DB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF1AB1F91BF79E1C00742DB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ADolceSocialTunesSharer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.ADolceSocialTunesSharer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF1AB1FA1BF79E1C00742DB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ADolceSocialTunesSharer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.ADolceSocialTunesSharer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AF1AB1FC1BF79E1C00742DB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ADolceSocialTunesSharerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.ADolceSocialTunesSharerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ADolceSocialTunesSharer.app/ADolceSocialTunesSharer";
+			};
+			name = Debug;
+		};
+		AF1AB1FD1BF79E1C00742DB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ADolceSocialTunesSharerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.ADolceSocialTunesSharerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ADolceSocialTunesSharer.app/ADolceSocialTunesSharer";
+			};
+			name = Release;
+		};
+		AF1AB1FF1BF79E1C00742DB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ADolceSocialTunesSharerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.ADolceSocialTunesSharerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ADolceSocialTunesSharer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		AF1AB2001BF79E1C00742DB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ADolceSocialTunesSharerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.intrepid.ADolceSocialTunesSharerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ADolceSocialTunesSharer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF1AB1CB1BF79E1C00742DB4 /* Build configuration list for PBXProject "ADolceSocialTunesSharer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1AB1F61BF79E1C00742DB4 /* Debug */,
+				AF1AB1F71BF79E1C00742DB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF1AB1F81BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1AB1F91BF79E1C00742DB4 /* Debug */,
+				AF1AB1FA1BF79E1C00742DB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF1AB1FB1BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1AB1FC1BF79E1C00742DB4 /* Debug */,
+				AF1AB1FD1BF79E1C00742DB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF1AB1FE1BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1AB1FF1BF79E1C00742DB4 /* Debug */,
+				AF1AB2001BF79E1C00742DB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF1AB1C81BF79E1C00742DB4 /* Project object */;
+}
