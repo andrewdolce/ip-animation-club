@@ -7,6 +7,16 @@
 //
 
 import UIKit
+import IntrepidSwiftWisdom
+
+extension UIColor {
+    static func shareBackgroundColor() -> UIColor {
+        return ColorDescriptor.RGB(r: 52, g: 25, b: 46, a: 255).color
+    }
+    static func shareForegroundColor() -> UIColor {
+        return ColorDescriptor.RGB(r: 216, g: 197, b: 99, a: 255).color
+    }
+}
 
 class ViewController: UIViewController {
 
@@ -19,10 +29,19 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tintedOverlayView: UIView!
 
+    @IBOutlet weak var shareButton: UIButton!
+
+    let slideAnimationDuration: NSTimeInterval = 0.5
+    let overlayAnimationDuration: NSTimeInterval = 0.5
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        topView.backgroundColor = UIColor.shareForegroundColor()
+        bottomView.backgroundColor = UIColor.shareBackgroundColor()
+
         shareContainerView.backgroundColor = bottomView.backgroundColor
+        shareButton.setTitleColor(bottomView.backgroundColor, forState: .Normal)
     }
 
     override func viewDidLayoutSubviews() {
@@ -52,7 +71,7 @@ class ViewController: UIViewController {
         topViewTrailing.constant = 0
         bottomViewLeading.constant = 0
         if animated {
-            animateLayout(duration: 0.5, delay: 0)
+            animateLayout(duration: slideAnimationDuration, delay: 0)
         } else {
             view.layoutIfNeeded()
         }
@@ -60,9 +79,9 @@ class ViewController: UIViewController {
 
     private func close(tappedView tappedView: UIView, animated: Bool) {
         if animated {
-            animateOverlayFromView(tappedView, duration: 0.5)
+            animateOverlayFromView(tappedView, duration: overlayAnimationDuration)
             topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
-            animateLayout(duration: 0.5, delay: 0.5)
+            animateLayout(duration: overlayAnimationDuration, delay: slideAnimationDuration)
         } else {
             topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
             view.layoutIfNeeded()

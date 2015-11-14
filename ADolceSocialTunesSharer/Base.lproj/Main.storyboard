@@ -18,27 +18,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yj5-xX-5a0" userLabel="Container">
-                                <rect key="frame" x="180" y="260" width="240" height="80"/>
+                                <rect key="frame" x="120" y="260" width="360" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XW5-ER-QZ5" userLabel="Bottom">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ub-6A-XUb" userLabel="Twitter">
-                                                <rect key="frame" x="10" y="10" width="66.5" height="60"/>
+                                                <rect key="frame" x="60" y="10" width="73.5" height="60"/>
                                                 <state key="normal" image="socialMediaTwitter"/>
                                                 <connections>
                                                     <action selector="mediaButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j0G-cQ-S8L"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5F-aK-KCn" userLabel="Google">
-                                                <rect key="frame" x="86.5" y="10" width="67" height="60"/>
+                                                <rect key="frame" x="143" y="10" width="73.5" height="60"/>
                                                 <state key="normal" image="socialMediaGoogle"/>
                                                 <connections>
                                                     <action selector="mediaButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2dg-tA-o00"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRe-e5-WIJ" userLabel="Facebook">
-                                                <rect key="frame" x="163.5" y="10" width="66.5" height="60"/>
+                                                <rect key="frame" x="226.5" y="10" width="73.5" height="60"/>
                                                 <state key="normal" image="socialMediaFacebook"/>
                                                 <connections>
                                                     <action selector="mediaButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nvz-lA-k0l"/>
@@ -48,8 +48,8 @@
                                         <color key="backgroundColor" red="0.47414972059999999" green="0.94563650030000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="U5F-aK-KCn" firstAttribute="centerY" secondItem="XW5-ER-QZ5" secondAttribute="centerY" id="1HI-eH-pyE"/>
-                                            <constraint firstAttribute="trailing" secondItem="vRe-e5-WIJ" secondAttribute="trailing" constant="10" id="FUD-68-vl1"/>
-                                            <constraint firstItem="9ub-6A-XUb" firstAttribute="leading" secondItem="XW5-ER-QZ5" secondAttribute="leading" constant="10" id="OiI-6a-9W9"/>
+                                            <constraint firstAttribute="trailing" secondItem="vRe-e5-WIJ" secondAttribute="trailing" constant="60" id="FUD-68-vl1"/>
+                                            <constraint firstItem="9ub-6A-XUb" firstAttribute="leading" secondItem="XW5-ER-QZ5" secondAttribute="leading" constant="60" id="OiI-6a-9W9"/>
                                             <constraint firstItem="U5F-aK-KCn" firstAttribute="leading" secondItem="9ub-6A-XUb" secondAttribute="trailing" constant="10" id="WMW-Va-ecx"/>
                                             <constraint firstItem="U5F-aK-KCn" firstAttribute="width" secondItem="9ub-6A-XUb" secondAttribute="width" id="ZgD-QN-tM6"/>
                                             <constraint firstItem="9ub-6A-XUb" firstAttribute="centerY" secondItem="XW5-ER-QZ5" secondAttribute="centerY" id="bRF-ff-CWG"/>
@@ -63,11 +63,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8w-D8-WXh" userLabel="Top">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byf-VH-QzL" userLabel="Share">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="28"/>
                                                 <state key="normal" title="SHARE"/>
                                                 <connections>
                                                     <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4LB-dG-r70"/>
@@ -89,11 +89,11 @@
                                     <constraint firstItem="P8w-D8-WXh" firstAttribute="centerY" secondItem="yj5-xX-5a0" secondAttribute="centerY" id="97O-RE-Jcc"/>
                                     <constraint firstItem="P8w-D8-WXh" firstAttribute="width" secondItem="yj5-xX-5a0" secondAttribute="width" id="F1U-nG-xa3"/>
                                     <constraint firstItem="P8w-D8-WXh" firstAttribute="height" secondItem="yj5-xX-5a0" secondAttribute="height" id="H5s-Yo-112"/>
-                                    <constraint firstAttribute="width" constant="240" id="KAX-gb-bLs"/>
+                                    <constraint firstAttribute="width" constant="360" id="KAX-gb-bLs"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="leading" secondItem="yj5-xX-5a0" secondAttribute="leading" id="Ke7-Da-xYM"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="width" secondItem="yj5-xX-5a0" secondAttribute="width" id="dpi-zl-NPE"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="centerY" secondItem="yj5-xX-5a0" secondAttribute="centerY" id="gIP-qf-rVe"/>
-                                    <constraint firstItem="P8w-D8-WXh" firstAttribute="trailing" secondItem="yj5-xX-5a0" secondAttribute="leading" constant="240" id="ohJ-J1-8np"/>
+                                    <constraint firstItem="P8w-D8-WXh" firstAttribute="trailing" secondItem="yj5-xX-5a0" secondAttribute="leading" constant="360" id="ohJ-J1-8np"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="height" secondItem="yj5-xX-5a0" secondAttribute="height" id="xxC-zE-lli"/>
                                 </constraints>
                             </view>
@@ -107,6 +107,7 @@
                     <connections>
                         <outlet property="bottomView" destination="XW5-ER-QZ5" id="XGk-Fk-bg0"/>
                         <outlet property="bottomViewLeading" destination="Ke7-Da-xYM" id="Qby-Jm-nyJ"/>
+                        <outlet property="shareButton" destination="Byf-VH-QzL" id="avv-Rz-h26"/>
                         <outlet property="shareContainerView" destination="yj5-xX-5a0" id="kQm-rA-gEW"/>
                         <outlet property="tintedOverlayView" destination="Vlm-sF-8gL" id="OaS-Ng-gRv"/>
                         <outlet property="topView" destination="P8w-D8-WXh" id="i7E-Q4-xiT"/>
