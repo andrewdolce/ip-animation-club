@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
 
+    @IBOutlet weak var tintedOverlayView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +38,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func mediaButtonPressed(sender: UIButton) {
-        close(animated: true)
+        close(tappedView: sender, animated: true)
     }
 
     // MARK: - Animations
@@ -49,24 +51,51 @@ class ViewController: UIViewController {
 
         topViewTrailing.constant = 0
         bottomViewLeading.constant = 0
-        layout(animated: animated)
-    }
-
-    private func close(animated animated: Bool) {
-        topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
-        layout(animated: animated)
-    }
-
-    private func layout(animated animated: Bool) {
         if animated {
-            shareContainerView.userInteractionEnabled = false
-            UIView.animateWithDuration(0.5, animations:{
-                self.view.layoutIfNeeded()
+            animateLayout(duration: 0.5, delay: 0)
+        } else {
+            view.layoutIfNeeded()
+        }
+    }
+
+    private func close(tappedView tappedView: UIView, animated: Bool) {
+        if animated {
+            animateOverlayFromView(tappedView, duration: 0.5)
+            topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
+            animateLayout(duration: 0.5, delay: 0.5)
+        } else {
+            topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
+            view.layoutIfNeeded()
+        }
+    }
+
+    private func animateLayout(duration duration: NSTimeInterval, delay: NSTimeInterval) {
+        shareContainerView.userInteractionEnabled = false
+        UIView.animateWithDuration(duration, delay: delay, options: UIViewAnimationOptions(rawValue: 0), animations: {
+            self.view.layoutIfNeeded()
             }, completion: { completed in
                 self.shareContainerView.userInteractionEnabled = true
-            })
-        } else {
-            self.view.layoutIfNeeded()
+                self.tintedOverlayView.hidden = true
+        })
+    }
+
+    // MARK: Overlay Animation
+
+    private func animateOverlayFromView(aView: UIView, duration: NSTimeInterval) {
+        positionOverlayOnView(aView)
+        tintedOverlayView.hidden = false
+        UIView.animateWithDuration(duration) {
+            self.expandOverlay()
         }
+    }
+
+    private func positionOverlayOnView(aView: UIView) {
+        let rect: CGRect = shareContainerView.convertRect(aView.bounds, fromView: aView)
+        tintedOverlayView.frame = rect
+        tintedOverlayView.layer.cornerRadius = min(CGRectGetWidth(rect), CGRectGetHeight(rect)) / 2
+    }
+
+    private func expandOverlay() {
+        tintedOverlayView.frame = shareContainerView.bounds
     }
 }
