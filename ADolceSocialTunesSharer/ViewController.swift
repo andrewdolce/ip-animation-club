@@ -91,11 +91,16 @@ class ViewController: UIViewController {
 
     private func positionOverlayOnView(aView: UIView) {
         let rect: CGRect = shareContainerView.convertRect(aView.bounds, fromView: aView)
+        tintedOverlayView.transform = CGAffineTransformIdentity
         tintedOverlayView.frame = rect
         tintedOverlayView.layer.cornerRadius = min(CGRectGetWidth(rect), CGRectGetHeight(rect)) / 2
     }
 
     private func expandOverlay() {
-        tintedOverlayView.frame = shareContainerView.bounds
+        let xScaleFactor = CGRectGetWidth(shareContainerView.bounds) / CGRectGetWidth(tintedOverlayView.bounds)
+        let yScaleFactor = CGRectGetHeight(shareContainerView.bounds) / CGRectGetHeight(tintedOverlayView.bounds)
+        let scaleFactor = max(xScaleFactor, yScaleFactor) * 2
+
+        tintedOverlayView.transform = CGAffineTransformMakeScale(scaleFactor, scaleFactor)
     }
 }
