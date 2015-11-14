@@ -19,6 +19,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        shareContainerView.backgroundColor = bottomView.backgroundColor
     }
 
     override func viewDidLayoutSubviews() {
@@ -40,7 +42,13 @@ class ViewController: UIViewController {
     // MARK: - Animations
 
     private func open(animated animated: Bool) {
+        if animated {
+            bottomViewLeading.constant = CGRectGetWidth(shareContainerView.bounds)
+            view.layoutIfNeeded()
+        }
+
         topViewTrailing.constant = 0
+        bottomViewLeading.constant = 0
         layout(animated: animated)
     }
 
