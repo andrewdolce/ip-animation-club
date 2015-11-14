@@ -101,8 +101,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomView" destination="XW5-ER-QZ5" id="XGk-Fk-bg0"/>
                         <outlet property="bottomViewLeading" destination="Ke7-Da-xYM" id="Qby-Jm-nyJ"/>
                         <outlet property="shareContainerView" destination="yj5-xX-5a0" id="kQm-rA-gEW"/>
+                        <outlet property="topView" destination="P8w-D8-WXh" id="i7E-Q4-xiT"/>
                         <outlet property="topViewTrailing" destination="ohJ-J1-8np" id="YFx-iF-nBz"/>
                     </connections>
                 </viewController>

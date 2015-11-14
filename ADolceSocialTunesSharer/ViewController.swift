@@ -14,9 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomViewLeading: NSLayoutConstraint!
 
     @IBOutlet weak var shareContainerView: UIView!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidLayoutSubviews() {
+        let halfHeight =  CGRectGetHeight(shareContainerView.bounds) / 2;
+        shareContainerView.layer.cornerRadius = halfHeight
+        topView.layer.cornerRadius = halfHeight
     }
 
     // MARK: - Actions
