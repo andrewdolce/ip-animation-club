@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ADolceSocialTunesSharer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yj5-xX-5a0" userLabel="Container">
+                                <rect key="frame" x="180" y="260" width="240" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XW5-ER-QZ5" userLabel="Bottom">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ub-6A-XUb" userLabel="Twitter">
+                                                <rect key="frame" x="10" y="10" width="66.5" height="60"/>
+                                                <state key="normal" image="socialMediaTwitter"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5F-aK-KCn" userLabel="Google">
+                                                <rect key="frame" x="86.5" y="10" width="67" height="60"/>
+                                                <state key="normal" image="socialMediaGoogle"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRe-e5-WIJ" userLabel="Facebook">
+                                                <rect key="frame" x="163.5" y="10" width="66.5" height="60"/>
+                                                <state key="normal" image="socialMediaFacebook"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.47414972059999999" green="0.94563650030000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="U5F-aK-KCn" firstAttribute="centerY" secondItem="XW5-ER-QZ5" secondAttribute="centerY" id="1HI-eH-pyE"/>
+                                            <constraint firstAttribute="trailing" secondItem="vRe-e5-WIJ" secondAttribute="trailing" constant="10" id="FUD-68-vl1"/>
+                                            <constraint firstItem="9ub-6A-XUb" firstAttribute="leading" secondItem="XW5-ER-QZ5" secondAttribute="leading" constant="10" id="OiI-6a-9W9"/>
+                                            <constraint firstItem="U5F-aK-KCn" firstAttribute="leading" secondItem="9ub-6A-XUb" secondAttribute="trailing" constant="10" id="WMW-Va-ecx"/>
+                                            <constraint firstItem="U5F-aK-KCn" firstAttribute="width" secondItem="9ub-6A-XUb" secondAttribute="width" id="ZgD-QN-tM6"/>
+                                            <constraint firstItem="9ub-6A-XUb" firstAttribute="centerY" secondItem="XW5-ER-QZ5" secondAttribute="centerY" id="bRF-ff-CWG"/>
+                                            <constraint firstItem="vRe-e5-WIJ" firstAttribute="leading" secondItem="U5F-aK-KCn" secondAttribute="trailing" constant="10" id="gdW-MB-PzF"/>
+                                            <constraint firstItem="vRe-e5-WIJ" firstAttribute="centerY" secondItem="XW5-ER-QZ5" secondAttribute="centerY" id="naY-Oj-Cw6"/>
+                                            <constraint firstItem="U5F-aK-KCn" firstAttribute="width" secondItem="vRe-e5-WIJ" secondAttribute="width" id="pId-Na-nsO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8w-D8-WXh" userLabel="Top">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byf-VH-QzL" userLabel="Share">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="SHARE"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.94379675620000003" blue="0.28132579759999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Byf-VH-QzL" firstAttribute="leading" secondItem="P8w-D8-WXh" secondAttribute="leading" id="2ax-7v-J0X"/>
+                                            <constraint firstAttribute="bottom" secondItem="Byf-VH-QzL" secondAttribute="bottom" id="4fb-N8-DUP"/>
+                                            <constraint firstAttribute="trailing" secondItem="Byf-VH-QzL" secondAttribute="trailing" id="Fk8-7S-vAb"/>
+                                            <constraint firstItem="Byf-VH-QzL" firstAttribute="top" secondItem="P8w-D8-WXh" secondAttribute="top" id="e2T-GA-qbx"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="0Pu-4o-g20"/>
+                                    <constraint firstItem="P8w-D8-WXh" firstAttribute="centerY" secondItem="yj5-xX-5a0" secondAttribute="centerY" id="97O-RE-Jcc"/>
+                                    <constraint firstItem="P8w-D8-WXh" firstAttribute="width" secondItem="yj5-xX-5a0" secondAttribute="width" id="F1U-nG-xa3"/>
+                                    <constraint firstItem="P8w-D8-WXh" firstAttribute="height" secondItem="yj5-xX-5a0" secondAttribute="height" id="H5s-Yo-112"/>
+                                    <constraint firstAttribute="trailing" secondItem="XW5-ER-QZ5" secondAttribute="trailing" id="JfU-Ab-SGB"/>
+                                    <constraint firstAttribute="width" constant="240" id="KAX-gb-bLs"/>
+                                    <constraint firstItem="XW5-ER-QZ5" firstAttribute="width" secondItem="yj5-xX-5a0" secondAttribute="width" id="dpi-zl-NPE"/>
+                                    <constraint firstItem="XW5-ER-QZ5" firstAttribute="centerY" secondItem="yj5-xX-5a0" secondAttribute="centerY" id="gIP-qf-rVe"/>
+                                    <constraint firstItem="P8w-D8-WXh" firstAttribute="trailing" secondItem="yj5-xX-5a0" secondAttribute="leading" constant="240" id="ohJ-J1-8np"/>
+                                    <constraint firstItem="XW5-ER-QZ5" firstAttribute="height" secondItem="yj5-xX-5a0" secondAttribute="height" id="xxC-zE-lli"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yj5-xX-5a0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JGP-od-8Zw"/>
+                            <constraint firstItem="yj5-xX-5a0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LJR-UR-lAz"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="340" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="socialMediaFacebook" width="60" height="60"/>
+        <image name="socialMediaGoogle" width="60" height="60"/>
+        <image name="socialMediaTwitter" width="60" height="60"/>
+    </resources>
 </document>
