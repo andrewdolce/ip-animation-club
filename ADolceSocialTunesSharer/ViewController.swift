@@ -10,16 +10,47 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var topViewTrailing: NSLayoutConstraint!
+    @IBOutlet weak var bottomViewLeading: NSLayoutConstraint!
+
+    @IBOutlet weak var shareContainerView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Actions
+
+    @IBAction func shareButtonPressed(sender: UIButton) {
+        open(animated: true)
     }
 
+    @IBAction func mediaButtonPressed(sender: UIButton) {
+        close(animated: true)
+    }
 
+    // MARK: - Animations
+
+    private func open(animated animated: Bool) {
+        topViewTrailing.constant = 0
+        layout(animated: animated)
+    }
+
+    private func close(animated animated: Bool) {
+        topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
+        layout(animated: animated)
+    }
+
+    private func layout(animated animated: Bool) {
+        if animated {
+            shareContainerView.userInteractionEnabled = false
+            UIView.animateWithDuration(0.5, animations:{
+                self.view.layoutIfNeeded()
+            }, completion: { completed in
+                self.shareContainerView.userInteractionEnabled = true
+            })
+        } else {
+            self.view.layoutIfNeeded()
+        }
+    }
 }
-

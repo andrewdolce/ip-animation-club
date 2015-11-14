@@ -26,14 +26,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ub-6A-XUb" userLabel="Twitter">
                                                 <rect key="frame" x="10" y="10" width="66.5" height="60"/>
                                                 <state key="normal" image="socialMediaTwitter"/>
+                                                <connections>
+                                                    <action selector="mediaButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j0G-cQ-S8L"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5F-aK-KCn" userLabel="Google">
                                                 <rect key="frame" x="86.5" y="10" width="67" height="60"/>
                                                 <state key="normal" image="socialMediaGoogle"/>
+                                                <connections>
+                                                    <action selector="mediaButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2dg-tA-o00"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRe-e5-WIJ" userLabel="Facebook">
                                                 <rect key="frame" x="163.5" y="10" width="66.5" height="60"/>
                                                 <state key="normal" image="socialMediaFacebook"/>
+                                                <connections>
+                                                    <action selector="mediaButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nvz-lA-k0l"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.47414972059999999" green="0.94563650030000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,6 +65,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <state key="normal" title="SHARE"/>
+                                                <connections>
+                                                    <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4LB-dG-r70"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.94379675620000003" blue="0.28132579759999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,8 +85,8 @@
                                     <constraint firstItem="P8w-D8-WXh" firstAttribute="centerY" secondItem="yj5-xX-5a0" secondAttribute="centerY" id="97O-RE-Jcc"/>
                                     <constraint firstItem="P8w-D8-WXh" firstAttribute="width" secondItem="yj5-xX-5a0" secondAttribute="width" id="F1U-nG-xa3"/>
                                     <constraint firstItem="P8w-D8-WXh" firstAttribute="height" secondItem="yj5-xX-5a0" secondAttribute="height" id="H5s-Yo-112"/>
-                                    <constraint firstAttribute="trailing" secondItem="XW5-ER-QZ5" secondAttribute="trailing" id="JfU-Ab-SGB"/>
                                     <constraint firstAttribute="width" constant="240" id="KAX-gb-bLs"/>
+                                    <constraint firstItem="XW5-ER-QZ5" firstAttribute="leading" secondItem="yj5-xX-5a0" secondAttribute="leading" id="Ke7-Da-xYM"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="width" secondItem="yj5-xX-5a0" secondAttribute="width" id="dpi-zl-NPE"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="centerY" secondItem="yj5-xX-5a0" secondAttribute="centerY" id="gIP-qf-rVe"/>
                                     <constraint firstItem="P8w-D8-WXh" firstAttribute="trailing" secondItem="yj5-xX-5a0" secondAttribute="leading" constant="240" id="ohJ-J1-8np"/>
@@ -88,6 +100,11 @@
                             <constraint firstItem="yj5-xX-5a0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LJR-UR-lAz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomViewLeading" destination="Ke7-Da-xYM" id="Qby-Jm-nyJ"/>
+                        <outlet property="shareContainerView" destination="yj5-xX-5a0" id="kQm-rA-gEW"/>
+                        <outlet property="topViewTrailing" destination="ohJ-J1-8np" id="YFx-iF-nBz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
