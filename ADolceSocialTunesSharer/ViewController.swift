@@ -54,49 +54,40 @@ class ViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func shareButtonPressed(sender: UIButton) {
-        open(animated: true)
+        open()
     }
 
     @IBAction func mediaButtonPressed(sender: UIButton) {
-        close(tappedView: sender, animated: true)
+        close(tappedView: sender)
     }
 
     // MARK: - Animations
 
-    private func open(animated animated: Bool) {
-        if animated {
-            bottomViewLeading.constant = CGRectGetWidth(shareContainerView.bounds)
-            view.layoutIfNeeded()
-        }
+    private func open() {
+        bottomViewLeading.constant = CGRectGetWidth(shareContainerView.bounds)
+        view.layoutIfNeeded()
 
         topViewLeading.constant = -CGRectGetWidth(shareContainerView.bounds)
         bottomViewLeading.constant = 0
-        if animated {
-            animateLayout(duration: slideAnimationDuration, delay: 0)
-        } else {
-            view.layoutIfNeeded()
+        animateLayout(duration: slideAnimationDuration, delay: 0, completion: nil)
+    }
+
+    private func close(tappedView tappedView: UIView) {
+        tintAnimation.applyToView(bottomView, fromView: tappedView, duration: overlayAnimationDuration)
+
+        topViewLeading.constant = 0
+        animateLayout(duration: slideAnimationDuration, delay: overlayAnimationDuration) { completed in
+            self.tintAnimation.remove()
         }
     }
 
-    private func close(tappedView tappedView: UIView, animated: Bool) {
-        if animated {
-            tintAnimation.applyToView(bottomView, fromView: tappedView, duration: overlayAnimationDuration)
-
-            topViewLeading.constant = 0
-            animateLayout(duration: slideAnimationDuration, delay: overlayAnimationDuration)
-        } else {
-            topViewLeading.constant = 0
-            view.layoutIfNeeded()
-        }
-    }
-
-    private func animateLayout(duration duration: NSTimeInterval, delay: NSTimeInterval) {
+    private func animateLayout(duration duration: NSTimeInterval, delay: NSTimeInterval, completion: ((Bool) -> Void)?) {
         shareContainerView.userInteractionEnabled = false
         UIView.animateWithDuration(duration, delay: delay, options: UIViewAnimationOptions(rawValue: 0), animations: {
             self.view.layoutIfNeeded()
         }, completion: { completed in
             self.shareContainerView.userInteractionEnabled = true
-            self.tintAnimation.remove()
+            completion?(completed)
         })
     }
 }
