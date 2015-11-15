@@ -20,7 +20,7 @@ extension UIColor {
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var topViewTrailing: NSLayoutConstraint!
+    @IBOutlet weak var topViewLeading: NSLayoutConstraint!
     @IBOutlet weak var bottomViewLeading: NSLayoutConstraint!
 
     @IBOutlet weak var shareContainerView: UIView!
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             view.layoutIfNeeded()
         }
 
-        topViewTrailing.constant = 0
+        topViewLeading.constant = -CGRectGetWidth(shareContainerView.bounds)
         bottomViewLeading.constant = 0
         if animated {
             animateLayout(duration: slideAnimationDuration, delay: 0)
@@ -80,10 +80,10 @@ class ViewController: UIViewController {
     private func close(tappedView tappedView: UIView, animated: Bool) {
         if animated {
             animateOverlayFromView(tappedView, duration: overlayAnimationDuration)
-            topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
+            topViewLeading.constant = 0
             animateLayout(duration: slideAnimationDuration, delay: overlayAnimationDuration)
         } else {
-            topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
+            topViewLeading.constant = 0
             view.layoutIfNeeded()
         }
     }

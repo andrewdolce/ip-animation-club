@@ -91,9 +91,9 @@
                                     <constraint firstItem="P8w-D8-WXh" firstAttribute="height" secondItem="yj5-xX-5a0" secondAttribute="height" id="H5s-Yo-112"/>
                                     <constraint firstAttribute="width" constant="360" id="KAX-gb-bLs"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="leading" secondItem="yj5-xX-5a0" secondAttribute="leading" id="Ke7-Da-xYM"/>
+                                    <constraint firstItem="P8w-D8-WXh" firstAttribute="leading" secondItem="yj5-xX-5a0" secondAttribute="leading" id="Q3c-wI-0L4"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="width" secondItem="yj5-xX-5a0" secondAttribute="width" id="dpi-zl-NPE"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="centerY" secondItem="yj5-xX-5a0" secondAttribute="centerY" id="gIP-qf-rVe"/>
-                                    <constraint firstItem="P8w-D8-WXh" firstAttribute="trailing" secondItem="yj5-xX-5a0" secondAttribute="leading" constant="360" id="ohJ-J1-8np"/>
                                     <constraint firstItem="XW5-ER-QZ5" firstAttribute="height" secondItem="yj5-xX-5a0" secondAttribute="height" id="xxC-zE-lli"/>
                                 </constraints>
                             </view>
@@ -111,7 +111,7 @@
                         <outlet property="shareContainerView" destination="yj5-xX-5a0" id="kQm-rA-gEW"/>
                         <outlet property="tintedOverlayView" destination="Vlm-sF-8gL" id="OaS-Ng-gRv"/>
                         <outlet property="topView" destination="P8w-D8-WXh" id="i7E-Q4-xiT"/>
-                        <outlet property="topViewTrailing" destination="ohJ-J1-8np" id="YFx-iF-nBz"/>
+                        <outlet property="topViewLeading" destination="Q3c-wI-0L4" id="5AV-oH-eto"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
