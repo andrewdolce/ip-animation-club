@@ -14,6 +14,7 @@
 		AF1AB1DE1BF79E1C00742DB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1AB1DC1BF79E1C00742DB4 /* LaunchScreen.storyboard */; };
 		AF1AB1E91BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB1E81BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift */; };
 		AF1AB1F41BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB1F31BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift */; };
+		F6255FA7D39D4791F9A5D139 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF89330E696E238DD750B37C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04865EA786E89815F56CF303 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		95F599EF976AECFB7DF706CC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AF1AB1D01BF79E1C00742DB4 /* ADolceSocialTunesSharer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADolceSocialTunesSharer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1AB1D31BF79E1C00742DB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF1AB1D51BF79E1C00742DB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		AF1AB1EF1BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADolceSocialTunesSharerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1AB1F31BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADolceSocialTunesSharerUITests.swift; sourceTree = "<group>"; };
 		AF1AB1F51BF79E1C00742DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF89330E696E238DD750B37C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6255FA7D39D4791F9A5D139 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23DF83D64A6BCB75AB6EB018 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF89330E696E238DD750B37C /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A19976A9A1752B50EA70E6F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04865EA786E89815F56CF303 /* Pods.debug.xcconfig */,
+				95F599EF976AECFB7DF706CC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AF1AB1C71BF79E1C00742DB4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				AF1AB1E71BF79E1C00742DB4 /* ADolceSocialTunesSharerTests */,
 				AF1AB1F21BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests */,
 				AF1AB1D11BF79E1C00742DB4 /* Products */,
+				A19976A9A1752B50EA70E6F0 /* Pods */,
+				23DF83D64A6BCB75AB6EB018 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF1AB1F81BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharer" */;
 			buildPhases = (
+				DA761D0BFB0B0AA56A9A274C /* Check Pods Manifest.lock */,
 				AF1AB1CC1BF79E1C00742DB4 /* Sources */,
 				AF1AB1CD1BF79E1C00742DB4 /* Frameworks */,
 				AF1AB1CE1BF79E1C00742DB4 /* Resources */,
+				D1B026263685458AA6796B4D /* Embed Pods Frameworks */,
+				65D4846B18ED324A4D989757 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65D4846B18ED324A4D989757 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1B026263685458AA6796B4D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA761D0BFB0B0AA56A9A274C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF1AB1CC1BF79E1C00742DB4 /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		AF1AB1F91BF79E1C00742DB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04865EA786E89815F56CF303 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ADolceSocialTunesSharer/Info.plist;
@@ -408,6 +484,7 @@
 		};
 		AF1AB1FA1BF79E1C00742DB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95F599EF976AECFB7DF706CC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ADolceSocialTunesSharer/Info.plist;
@@ -484,6 +561,7 @@
 				AF1AB1FA1BF79E1C00742DB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF1AB1FB1BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharerTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +570,7 @@
 				AF1AB1FD1BF79E1C00742DB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF1AB1FE1BF79E1C00742DB4 /* Build configuration list for PBXNativeTarget "ADolceSocialTunesSharerUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +579,7 @@
 				AF1AB2001BF79E1C00742DB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
