@@ -28,12 +28,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareContainerView: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
-
-    @IBOutlet weak var tintedOverlayView: UIView!
-
     @IBOutlet weak var shareButton: UIButton!
 
-    var tintLayer: CALayer? = nil
+    var tintAnimation: ExpandingTintAnimation = ExpandingTintAnimation(color: UIColor.whiteColor().colorWithAlphaComponent(0.8))
 
     let slideAnimationDuration: NSTimeInterval = NSTimeInterval(0.5 * slowFactor)
     let overlayAnimationDuration: NSTimeInterval = NSTimeInterval(0.5 * slowFactor)
@@ -83,11 +80,7 @@ class ViewController: UIViewController {
 
     private func close(tappedView tappedView: UIView, animated: Bool) {
         if animated {
-            tintLayer?.removeFromSuperlayer()
-
-            let tintAnimationLayer = ExpandingTintLayer(color: UIColor.whiteColor().colorWithAlphaComponent(0.8))
-            tintAnimationLayer.animateOnView(bottomView, fromView: tappedView, duration: overlayAnimationDuration)
-            tintLayer = tintAnimationLayer
+            tintAnimation.applyToView(bottomView, fromView: tappedView, duration: overlayAnimationDuration)
 
             topViewLeading.constant = 0
             animateLayout(duration: slideAnimationDuration, delay: overlayAnimationDuration)
@@ -103,32 +96,7 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: { completed in
             self.shareContainerView.userInteractionEnabled = true
-            self.tintLayer?.removeFromSuperlayer()
+            self.tintAnimation.remove()
         })
-    }
-
-    // MARK: Overlay Animation
-
-    private func animateOverlayFromView(aView: UIView, duration: NSTimeInterval) {
-        positionOverlayOnView(aView)
-        tintedOverlayView.hidden = false
-        UIView.animateWithDuration(duration) {
-            self.expandOverlay()
-        }
-    }
-
-    private func positionOverlayOnView(aView: UIView) {
-        let rect: CGRect = shareContainerView.convertRect(aView.bounds, fromView: aView)
-        tintedOverlayView.transform = CGAffineTransformIdentity
-        tintedOverlayView.frame = rect
-        tintedOverlayView.layer.cornerRadius = min(CGRectGetWidth(rect), CGRectGetHeight(rect)) / 2
-    }
-
-    private func expandOverlay() {
-        let xScaleFactor = CGRectGetWidth(shareContainerView.bounds) / CGRectGetWidth(tintedOverlayView.bounds)
-        let yScaleFactor = CGRectGetHeight(shareContainerView.bounds) / CGRectGetHeight(tintedOverlayView.bounds)
-        let scaleFactor = max(xScaleFactor, yScaleFactor) * 2
-
-        tintedOverlayView.transform = CGAffineTransformMakeScale(scaleFactor, scaleFactor)
     }
 }

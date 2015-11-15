@@ -58,10 +58,6 @@
                                             <constraint firstItem="U5F-aK-KCn" firstAttribute="width" secondItem="vRe-e5-WIJ" secondAttribute="width" id="pId-Na-nsO"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vlm-sF-8gL" userLabel="Overlay">
-                                        <rect key="frame" x="0.0" y="0.0" width="276" height="80"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8w-D8-WXh" userLabel="Top">
                                         <rect key="frame" x="0.0" y="0.0" width="276" height="80"/>
                                         <subviews>
@@ -109,7 +105,6 @@
                         <outlet property="bottomViewLeading" destination="Ke7-Da-xYM" id="Qby-Jm-nyJ"/>
                         <outlet property="shareButton" destination="Byf-VH-QzL" id="avv-Rz-h26"/>
                         <outlet property="shareContainerView" destination="yj5-xX-5a0" id="kQm-rA-gEW"/>
-                        <outlet property="tintedOverlayView" destination="Vlm-sF-8gL" id="OaS-Ng-gRv"/>
                         <outlet property="topView" destination="P8w-D8-WXh" id="i7E-Q4-xiT"/>
                         <outlet property="topViewLeading" destination="Q3c-wI-0L4" id="5AV-oH-eto"/>
                     </connections>
