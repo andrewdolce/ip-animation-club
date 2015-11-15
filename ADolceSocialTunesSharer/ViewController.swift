@@ -18,6 +18,8 @@ extension UIColor {
     }
 }
 
+let slowFactor: Double = 1.0
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var topViewLeading: NSLayoutConstraint!
@@ -31,8 +33,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var shareButton: UIButton!
 
-    let slideAnimationDuration: NSTimeInterval = 0.5
-    let overlayAnimationDuration: NSTimeInterval = 0.5
+    var tintLayer: CALayer? = nil
+
+    let slideAnimationDuration: NSTimeInterval = NSTimeInterval(0.5 * slowFactor)
+    let overlayAnimationDuration: NSTimeInterval = NSTimeInterval(0.5 * slowFactor)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +83,12 @@ class ViewController: UIViewController {
 
     private func close(tappedView tappedView: UIView, animated: Bool) {
         if animated {
-            animateOverlayFromView(tappedView, duration: overlayAnimationDuration)
+            tintLayer?.removeFromSuperlayer()
+
+            let tintAnimationLayer = ExpandingTintLayer(color: UIColor.whiteColor().colorWithAlphaComponent(0.8))
+            tintAnimationLayer.animateOnView(bottomView, fromView: tappedView, duration: overlayAnimationDuration)
+            tintLayer = tintAnimationLayer
+
             topViewLeading.constant = 0
             animateLayout(duration: slideAnimationDuration, delay: overlayAnimationDuration)
         } else {
@@ -92,9 +101,9 @@ class ViewController: UIViewController {
         shareContainerView.userInteractionEnabled = false
         UIView.animateWithDuration(duration, delay: delay, options: UIViewAnimationOptions(rawValue: 0), animations: {
             self.view.layoutIfNeeded()
-            }, completion: { completed in
-                self.shareContainerView.userInteractionEnabled = true
-                self.tintedOverlayView.hidden = true
+        }, completion: { completed in
+            self.shareContainerView.userInteractionEnabled = true
+            self.tintLayer?.removeFromSuperlayer()
         })
     }
 

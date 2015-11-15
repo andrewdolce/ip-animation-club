@@ -14,6 +14,7 @@
 		AF1AB1DE1BF79E1C00742DB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1AB1DC1BF79E1C00742DB4 /* LaunchScreen.storyboard */; };
 		AF1AB1E91BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB1E81BF79E1C00742DB4 /* ADolceSocialTunesSharerTests.swift */; };
 		AF1AB1F41BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1AB1F31BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift */; };
+		AFC218A51BF91A6900EE8D73 /* ExpandingTintLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC218A41BF91A6900EE8D73 /* ExpandingTintLayer.swift */; };
 		F6255FA7D39D4791F9A5D139 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF89330E696E238DD750B37C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		AF1AB1F31BF79E1C00742DB4 /* ADolceSocialTunesSharerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADolceSocialTunesSharerUITests.swift; sourceTree = "<group>"; };
 		AF1AB1F51BF79E1C00742DB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF89330E696E238DD750B37C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFC218A41BF91A6900EE8D73 /* ExpandingTintLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingTintLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				AF1AB1DA1BF79E1C00742DB4 /* Assets.xcassets */,
 				AF1AB1DC1BF79E1C00742DB4 /* LaunchScreen.storyboard */,
 				AF1AB1DF1BF79E1C00742DB4 /* Info.plist */,
+				AFC218A41BF91A6900EE8D73 /* ExpandingTintLayer.swift */,
 			);
 			path = ADolceSocialTunesSharer;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			files = (
 				AF1AB1D61BF79E1C00742DB4 /* ViewController.swift in Sources */,
 				AF1AB1D41BF79E1C00742DB4 /* AppDelegate.swift in Sources */,
+				AFC218A51BF91A6900EE8D73 /* ExpandingTintLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
