@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         if animated {
             animateOverlayFromView(tappedView, duration: overlayAnimationDuration)
             topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
-            animateLayout(duration: overlayAnimationDuration, delay: slideAnimationDuration)
+            animateLayout(duration: slideAnimationDuration, delay: overlayAnimationDuration)
         } else {
             topViewTrailing.constant = CGRectGetWidth(shareContainerView.bounds)
             view.layoutIfNeeded()
