@@ -64,30 +64,31 @@ class ViewController: UIViewController {
     // MARK: - Animations
 
     private func open() {
+        // First shift the bottom view all the way to the right
         bottomViewLeading.constant = CGRectGetWidth(shareContainerView.bounds)
         view.layoutIfNeeded()
 
+        // Now animate the views into place
         topViewLeading.constant = -CGRectGetWidth(shareContainerView.bounds)
         bottomViewLeading.constant = 0
-        animateLayout(duration: slideAnimationDuration, delay: 0, completion: nil)
-    }
 
-    private func close(tappedView tappedView: UIView) {
-        tintAnimation.applyToView(bottomView, fromView: tappedView, duration: overlayAnimationDuration)
-
-        topViewLeading.constant = 0
-        animateLayout(duration: slideAnimationDuration, delay: overlayAnimationDuration) { completed in
-            self.tintAnimation.remove()
+        UIView.animateWithDuration(slideAnimationDuration) {
+            self.view.layoutIfNeeded()
         }
     }
 
-    private func animateLayout(duration duration: NSTimeInterval, delay: NSTimeInterval, completion: ((Bool) -> Void)?) {
+    private func close(tappedView tappedView: UIView) {
         shareContainerView.userInteractionEnabled = false
-        UIView.animateWithDuration(duration, delay: delay, options: UIViewAnimationOptions(rawValue: 0), animations: {
+        tintAnimation.applyToView(bottomView, fromView: tappedView, duration: overlayAnimationDuration)
+
+        topViewLeading.constant = 0
+
+        let options = UIViewAnimationOptions(rawValue: 0)
+        UIView.animateWithDuration(slideAnimationDuration, delay: overlayAnimationDuration, options: options, animations: {
             self.view.layoutIfNeeded()
-        }, completion: { completed in
+        }, completion: { finished in
+            self.tintAnimation.remove()
             self.shareContainerView.userInteractionEnabled = true
-            completion?(completed)
         })
     }
 }
