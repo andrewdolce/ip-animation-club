@@ -1,0 +1,12 @@
+PODS:
+  - IntrepidSwiftWisdom (0.0.15):
+    - IntrepidSwiftWisdom/Core (= 0.0.15)
+  - IntrepidSwiftWisdom/Core (0.0.15)
+
+DEPENDENCIES:
+  - IntrepidSwiftWisdom
+
+SPEC CHECKSUMS:
+  IntrepidSwiftWisdom: 3a5acc3cb436abd489c1dd50923a5b1f26cc243f
+
+COCOAPODS: 0.39.0

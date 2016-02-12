@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CardView" customModule="ADolceSwipeableCards" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SIK-Zo-jOJ">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRO-d1-teC" userLabel="Overlay">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SIK-Zo-jOJ" secondAttribute="trailing" id="DHi-NU-yyG"/>
+                <constraint firstItem="ZRO-d1-teC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xde-ff-qyQ"/>
+                <constraint firstAttribute="bottom" secondItem="SIK-Zo-jOJ" secondAttribute="bottom" id="ZqS-CE-44s"/>
+                <constraint firstItem="SIK-Zo-jOJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jjL-iG-YvA"/>
+                <constraint firstAttribute="trailing" secondItem="ZRO-d1-teC" secondAttribute="trailing" id="lWM-Dq-ctt"/>
+                <constraint firstItem="ZRO-d1-teC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m8e-Sh-n5U"/>
+                <constraint firstItem="SIK-Zo-jOJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="thC-QD-ocg"/>
+                <constraint firstAttribute="bottom" secondItem="ZRO-d1-teC" secondAttribute="bottom" id="vFs-wq-tTH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="SIK-Zo-jOJ" id="ZlP-jw-070"/>
+                <outlet property="overlayView" destination="ZRO-d1-teC" id="MF0-0g-AhW"/>
+            </connections>
+        </view>
+    </objects>
+</document>

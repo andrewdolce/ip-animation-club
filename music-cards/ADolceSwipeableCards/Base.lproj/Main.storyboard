@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ADolceSwipeableCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1pa-T8-Qb6" userLabel="Back Image">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ogd-1H-mLn" userLabel="Front Image">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rK6-19-iwe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9rr-K4-eR5">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCf-Bw-dof" userLabel="Card Container">
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="gwC-dS-QnD"/>
+                                    <constraint firstAttribute="width" constant="240" id="mhs-f7-a0K"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="1pa-T8-Qb6" secondAttribute="bottom" id="2IX-A1-myj"/>
+                            <constraint firstItem="1pa-T8-Qb6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3OV-uG-T1B"/>
+                            <constraint firstItem="Ogd-1H-mLn" firstAttribute="trailing" secondItem="1pa-T8-Qb6" secondAttribute="trailing" id="6kg-RB-aoC"/>
+                            <constraint firstItem="rK6-19-iwe" firstAttribute="top" secondItem="1pa-T8-Qb6" secondAttribute="top" id="95D-zq-9Ry"/>
+                            <constraint firstItem="Ogd-1H-mLn" firstAttribute="bottom" secondItem="1pa-T8-Qb6" secondAttribute="bottom" id="9Jq-F0-i38"/>
+                            <constraint firstItem="rK6-19-iwe" firstAttribute="leading" secondItem="1pa-T8-Qb6" secondAttribute="leading" id="BsR-Zy-mur"/>
+                            <constraint firstItem="1pa-T8-Qb6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="EFG-V3-DHY"/>
+                            <constraint firstItem="Ogd-1H-mLn" firstAttribute="top" secondItem="1pa-T8-Qb6" secondAttribute="top" id="Pzs-0R-vD3"/>
+                            <constraint firstItem="vCf-Bw-dof" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vab-Mm-k4N"/>
+                            <constraint firstItem="vCf-Bw-dof" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dgz-lW-GnO"/>
+                            <constraint firstItem="rK6-19-iwe" firstAttribute="bottom" secondItem="1pa-T8-Qb6" secondAttribute="bottom" id="eDw-Ml-AR2"/>
+                            <constraint firstItem="rK6-19-iwe" firstAttribute="trailing" secondItem="1pa-T8-Qb6" secondAttribute="trailing" id="erd-dC-smK"/>
+                            <constraint firstItem="Ogd-1H-mLn" firstAttribute="leading" secondItem="1pa-T8-Qb6" secondAttribute="leading" id="uAi-CD-6ek"/>
+                            <constraint firstAttribute="trailing" secondItem="1pa-T8-Qb6" secondAttribute="trailing" id="zf6-Zo-hrD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backImageView" destination="1pa-T8-Qb6" id="bbX-Ac-NlW"/>
+                        <outlet property="cardContainerView" destination="vCf-Bw-dof" id="H3o-WA-HQv"/>
+                        <outlet property="frontImageView" destination="Ogd-1H-mLn" id="sGz-cZ-BiS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
