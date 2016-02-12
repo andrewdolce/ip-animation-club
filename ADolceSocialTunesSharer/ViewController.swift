@@ -30,10 +30,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var shareButton: UIButton!
 
-    var tintAnimation: ExpandingTintAnimation = ExpandingTintAnimation(color: UIColor.whiteColor().colorWithAlphaComponent(0.8))
+    var rippleAnimation: RippleAnimation = RippleAnimation(color: UIColor.whiteColor().colorWithAlphaComponent(0.8))
 
     let slideAnimationDuration: NSTimeInterval = NSTimeInterval(0.5 * slowFactor)
-    let overlayAnimationDuration: NSTimeInterval = NSTimeInterval(0.5 * slowFactor)
+    let rippleAnimationDuration: NSTimeInterval = NSTimeInterval(0.5 * slowFactor)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,15 +79,15 @@ class ViewController: UIViewController {
 
     private func close(tappedView tappedView: UIView) {
         shareContainerView.userInteractionEnabled = false
-        tintAnimation.applyToView(bottomView, fromView: tappedView, duration: overlayAnimationDuration)
+        rippleAnimation.applyToView(bottomView, fromView: tappedView, duration: rippleAnimationDuration)
 
         topViewLeading.constant = 0
 
         let options = UIViewAnimationOptions(rawValue: 0)
-        UIView.animateWithDuration(slideAnimationDuration, delay: overlayAnimationDuration, options: options, animations: {
+        UIView.animateWithDuration(slideAnimationDuration, delay: rippleAnimationDuration, options: options, animations: {
             self.view.layoutIfNeeded()
         }, completion: { finished in
-            self.tintAnimation.remove()
+            self.rippleAnimation.remove()
             self.shareContainerView.userInteractionEnabled = true
         })
     }
