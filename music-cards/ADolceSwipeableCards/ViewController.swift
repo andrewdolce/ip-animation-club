@@ -30,7 +30,7 @@ class ViewController: UIViewController {
 
         createTestCards()
         createCardViews()
-        createTapRecognizer()
+        createPanRecognizer()
     }
 
     private func createTestCards() {
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         let cardView = CardView.ip_fromNib("CardView")
         cardView.image = card.image
         cardView.overlayAlpha = 0.7
-        cardView.backgroundColor = UIColor.yellowColor()
+
         return cardView
     }
 
@@ -71,11 +71,14 @@ class ViewController: UIViewController {
         cardView.frame = cardContainerView.bounds
         cardContainerView.insertSubview(cardView, atIndex: 0)
 
-        let margins = self.cardContainerView.layoutMarginsGuide
-        cardView.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = true
-        cardView.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor).active = true
-        cardView.topAnchor.constraintEqualToAnchor(margins.topAnchor).active = true
-        cardView.bottomAnchor.constraintEqualToAnchor(margins.bottomAnchor).active = true
+//        let margins = self.cardContainerView.layoutMarginsGuide
+//        cardView.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = true
+//        cardView.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor).active = true
+//        cardView.topAnchor.constraintEqualToAnchor(margins.topAnchor).active = true
+//        cardView.bottomAnchor.constraintEqualToAnchor(margins.bottomAnchor).active = true
+
+        cardContainerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[cardView]|", options: [], metrics: nil, views: [ "cardView" : cardView ]))
+        cardContainerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[cardView]|", options: [], metrics: nil, views: [ "cardView" : cardView ]))
 
         cardView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -111,12 +114,6 @@ class ViewController: UIViewController {
     }
 
     private func animateToNextCard() {
-        guard let frontCardView = cardViewsInStack.first else {
-            return
-        }
-
-        throwCardView(frontCardView)
-
         // Add the next card
         let newIndex = (currentIndex + numberOfCardsToShow) % cards.count
         let newCardView = cardViewForIndex(newIndex)
@@ -126,8 +123,7 @@ class ViewController: UIViewController {
         currentIndex += 1
 
         // Animate and update the stack
-        newCardView.transform = CGAffineTransformMakeScale(0.8, 0.8)
-
+        newCardView.transform = CGAffineTransformTranslate(CGAffineTransformMakeScale(0.8, 0.8), 0, -40)
 
         let newStack = Array(cardViewsInStack[1..<cardViewsInStack.count])
 
@@ -135,16 +131,51 @@ class ViewController: UIViewController {
             // Animate cards forward in stack
             self.configureUIForCardsInStack(newStack)
         }, completion: { finished in
-            frontCardView.removeFromSuperview()
             self.cardViewsInStack = newStack
         })
     }
 
-    private func throwCardView(cardView: UIView) {
-        let thrownTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(CGFloat(M_1_PI) / 4.0), 400, 0)
-        UIView.animateWithDuration(0.5) {
-            cardView.transform = thrownTransform
+    private func throwCardView(cardView: UIView, offset: CGPoint, velocity: CGPoint, minSpeed: CGFloat) {
+        let currentSpeed = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
+        let useVelocityDirection = currentSpeed > minSpeed / 2
+
+        let direction = useVelocityDirection ? velocity : offset
+        let directionMagnitude = sqrt(direction.x * direction.x + direction.y * direction.y)
+
+        guard directionMagnitude > 0 else {
+            return
         }
+
+        let normalizedDirection = CGPointMake(direction.x / directionMagnitude, direction.y / directionMagnitude)
+        let throwSpeed = max(currentSpeed, minSpeed)
+        let throwDuration = 0.5
+        let throwDistance = throwSpeed * CGFloat(throwDuration)
+        let throwTranslation = CGPointMake(normalizedDirection.x * throwDistance, normalizedDirection.y * throwDistance)
+
+        print("Velocity: \(velocity)")
+        print("Offset: \(offset)")
+        print("Speed: \(currentSpeed)")
+        print("Min Speed: \(minSpeed)")
+        print("Use velocity ? : \(useVelocityDirection)")
+        print("Throw direction : \(normalizedDirection)")
+        print("Throw translation : \(throwTranslation)")
+
+        let throwRotation = CGFloat(M_PI / 6)
+
+        var throwTransform = CGAffineTransformMakeTranslation(throwTranslation.x + offset.x, throwTranslation.y + offset.y)
+        throwTransform = CGAffineTransformRotate(throwTransform, throwRotation)
+
+        print("Transform : \(throwTransform)")
+//
+//        let currentTransform = CGAffineTransformMake(cardView.transform.a, cardView.transform.b, cardView.transform.c, cardView.transform.d, cardView.transform.tx, cardView.transform.ty)
+//        let finalTransform = CGAffineTransformConcat(currentTransform, throwTransform)
+//        print("Concatenated : \(finalTransform)")
+
+        UIView.animateWithDuration(0.5, delay: 0, options: [.CurveLinear], animations: {
+            cardView.transform = throwTransform
+        }, completion: { finished in
+            cardView.removeFromSuperview()
+        })
     }
 
     // MARK: Gestures
@@ -156,6 +187,62 @@ class ViewController: UIViewController {
 
     dynamic private func didTapCards(recognizer: UITapGestureRecognizer) {
         animateToNextCard()
+    }
+
+    private func createPanRecognizer() {
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: "didPanCard:")
+        cardContainerView.addGestureRecognizer(panRecognizer)
+    }
+
+    dynamic private func didPanCard(recognizer: UIPanGestureRecognizer) {
+        guard let frontCard = cardViewsInStack.first else {
+            return
+        }
+
+        let translation = recognizer.translationInView(cardContainerView)
+        print("translation = \(translation)")
+
+
+        let distance = sqrt(translation.x * translation.x + translation.y * translation.y)
+        let distanceThreshold = CGRectGetWidth(cardContainerView.bounds) * 0.5
+        let distanceFraction = distance / max(distanceThreshold, 0.01)
+
+        let maxRotation = CGFloat(M_PI) / 12.0
+        let rotation = maxRotation * min(distanceFraction, 1)
+
+        let translationTransform = CGAffineTransformMakeTranslation(translation.x, translation.y)
+        let transform = CGAffineTransformRotate(translationTransform, rotation)
+
+        let minOffscreenDistance = max(CGRectGetWidth(view.bounds), CGRectGetHeight(view.bounds))
+        let throwDuration = 1.0
+        let minSpeed = minOffscreenDistance / CGFloat(throwDuration)
+
+        print("*****")
+//        print("translation: \(translationTransform)")
+        print("translation + rotation: \(transform)")
+
+//        frontCard.layer.anchorPoint = CGPointMake(0.5, 0.5)
+        frontCard.transform = transform
+
+        if recognizer.state == .Ended {
+
+            let velocity = recognizer.velocityInView(cardContainerView)
+
+            let speed = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
+            let speedTreshold = minSpeed
+
+            let isFarEnoughForThrow = distance > distanceThreshold
+            let isFastEnoughForThrow = speed > speedTreshold
+
+            if isFarEnoughForThrow || isFastEnoughForThrow {
+                throwCardView(frontCard, offset: translation, velocity: velocity, minSpeed: minSpeed)
+                animateToNextCard()
+            } else {
+                UIView.animateWithDuration(0.5) {
+                    frontCard.transform = CGAffineTransformIdentity
+                }
+            }
+        }
     }
 }
 
